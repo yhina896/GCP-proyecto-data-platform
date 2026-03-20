@@ -1,0 +1,3 @@
+resource google_bigquery_dataset analytics { dataset_id = analytics location = US }
+resource google_bigquery_table events { dataset_id = google_bigquery_dataset.analytics.dataset_id table_id = events schema = [{"name":"user_id","type":"INTEGER"},{"name":"event_type","type":"STRING"},{"name":"product_id","type":"INTEGER"},{"name":"timestamp","type":"TIMESTAMP"}] }
+resource google_bigquery_table invoices { dataset_id = google_bigquery_dataset.analytics.dataset_id table_id = invoices schema = [{"name":"invoice_id","type":"STRING"},{"name":"total","type":"FLOAT"},{"name":"customer","type":"STRING"},{"name":"date","type":"DATE"}] }

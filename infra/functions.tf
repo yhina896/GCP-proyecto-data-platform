@@ -1,0 +1,1 @@
+resource google_cloudfunctions_function pdf_processor { name = process-pdf runtime = python39 entry_point = process_pdf trigger_bucket = google_storage_bucket.pdf_bucket.name source_archive_bucket = google_storage_bucket.data_lake.name source_archive_object = function.zip }
